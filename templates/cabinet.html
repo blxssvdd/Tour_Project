@@ -3,12 +3,9 @@
 {% block content %}
 
   <main class="container mt-3">
-    <h1 class="display-5 mt-4">Вирушаємо {{ departures[dep] }}</h1>
-    <p class="mb-4">Знайдено {{ tours | length }} турів</p>
-    <!-- CARDS -->
     <div class="row mt-5">
 
-      {% for tour in tours %}
+      {% for tour in user_tours %}
       <div class="col-4">
         <div class="card mb-4">
           <div class="embed-responsive embed-responsive-16by9">
