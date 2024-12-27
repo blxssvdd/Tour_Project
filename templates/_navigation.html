@@ -1,27 +1,19 @@
 <header class="container mt-3">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Flask Travel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-        <li class="nav-item active">
-        <a class="nav-link" href="#">З Києва</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Зі Львова</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">З Чернівець</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">З Чернігова</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">З Одеси</a>
-        </li>
-        </ul>
+      <ul class="navbar-nav">
+
+          {% for dep_eng, dep_ukr in departures.items() %}
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('departure', dep_eng=dep_eng) }}">{{ dep_ukr }}</a>
+          </li>
+          {% endfor %}
+
+      </ul>
       </div>
-    </nav>
-  </header>
+  </nav>
+</header>
