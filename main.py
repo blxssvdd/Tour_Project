@@ -7,11 +7,10 @@ from sqlalchemy import or_
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from data import data
-# from data.tours_to_db import data_to_db
 from data.base import Session, create_db
 from data.models import Tour, User
 from data.forms import SignUpForm, LoginForm
-
+from data.tours_to_db import data_to_db
 
 app = Flask(__name__)
 app.secret_key = binascii.hexlify(os.urandom(24))
@@ -133,5 +132,5 @@ def cabinet():
 
 if __name__ == "__main__":
     create_db()
-    # data_to_db()
+    # data_to_db
     app.run(debug=True)
